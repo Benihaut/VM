@@ -46,13 +46,16 @@ services:
 
   jenkins:
     image: jenkins/jenkins:lts
+    user: root # Exécuter en tant qu'utilisateur root pour installer Docker
     ports:
       - "8083:8080"
       - "50001:50000"
     volumes:
       - jenkins_data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock # Monture du socket Docker
     networks:
       - app-network
+
 
 volumes:
   database_data:

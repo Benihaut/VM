@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clonage du projet') {
             steps {
-                git branch: 'main', url: 'https://github.com/votre-utilisateur/projetcda'
+                git branch: 'main', url:'https://github.com/Benihaut/VM.git'
             }
         }
         stage('Installation des dépendances') {
